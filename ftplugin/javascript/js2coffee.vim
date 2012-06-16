@@ -1,4 +1,4 @@
-function s:Js2Coffee()
+function! s:Js2Coffee()
   let l:fn = expand('%:p')
   let l:coffee = fnamemodify(l:fn, ':r').'.coffee'
   exe 'vnew '.l:coffee
