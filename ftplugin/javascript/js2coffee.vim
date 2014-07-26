@@ -32,4 +32,4 @@ function! s:Js2Coffee(...)
     silent exe '%!js2coffee'
 endfunction
 
-command! -nargs=? Js2Coffee call s:Js2Coffee(<f-args>)
+command! -buffer -nargs=? Js2Coffee call s:Js2Coffee(<f-args>)
