@@ -13,6 +13,15 @@ if !exists('g:js2coffee_split_cmd')
 endif
 
 function! s:Js2Coffee(...)
+    if !executable('js2coffee')
+        if executable('npm')
+            exe '!npm install -g js2coffee'
+        else
+            echoerr 'Please npm install -g js2coffee first!'
+            return
+        endif
+    endif
+
     if a:0 == 1
         let coffeefile = a:1
     else
